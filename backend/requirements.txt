@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+groq
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
+aiofiles
+python-multipart
+openai
+openai-agents
+googlemaps
+deep-translator 
+langdetect
+beautifulsoup4
+requests

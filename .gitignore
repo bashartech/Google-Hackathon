@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+.next/
+dist/
+build/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+credentials.json
+token.json
+
+# Markdown Files
+*.md
+!README.md
+!readme.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# SQLite
+*.sqlite
+*.db

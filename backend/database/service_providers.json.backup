@@ -1,0 +1,776 @@
+{
+  "providers": [
+    {
+      "provider_id": "PRV001",
+      "name": "Ali AC Services",
+      "owner_name": "Ali Hassan",
+      "service_type": "AC Repair",
+      "service_category": "Home Appliances",
+      "location": {
+        "address": "House 25, Street 5, G-13/1, Islamabad, Pakistan",
+        "area": "G-13",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": []
+      },
+      "rating": 4.8,
+      "reviews_count": 156,
+      "total_jobs": 342,
+      "price_range": "PKR 1500-3000",
+      "experience_years": 8,
+      "verified": true,
+      "contact": {
+        "phone": "+92-300-1234567",
+        "whatsapp": "+92-300-1234567",
+        "email": "ali.ac@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": [
+        "AC Installation",
+        "AC Repair",
+        "AC Maintenance",
+        "Gas Refilling"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 45
+    },
+    {
+      "provider_id": "PRV002",
+      "name": "Hassan Plumbing Services",
+      "owner_name": "Hassan Malik",
+      "service_type": "Plumbing",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 12, Main Market, F-10 Markaz, Islamabad, Pakistan",
+        "area": "F-10",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.6,
+      "reviews_count": 89,
+      "total_jobs": 234,
+      "price_range": "PKR 1000-2500",
+      "experience_years": 6,
+      "verified": true,
+      "contact": {
+        "phone": "+92-301-2345678",
+        "whatsapp": "+92-301-2345678",
+        "email": "hassan.plumbing@servicelink.pk"
+      },
+      "languages": ["Urdu", "Punjabi"],
+      "services_offered": [
+        "Pipe Repair",
+        "Drain Cleaning",
+        "Water Tank Installation",
+        "Bathroom Fitting"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 30
+    },
+    {
+      "provider_id": "PRV003",
+      "name": "Sarah Electricals",
+      "owner_name": "Sarah Ahmed",
+      "service_type": "Electrician",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "House 45, Street 8, I-8/3, Islamabad, Pakistan",
+        "area": "I-8",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "saturday": ["10AM", "11AM"],
+        "sunday": []
+      },
+      "rating": 4.9,
+      "reviews_count": 203,
+      "total_jobs": 456,
+      "price_range": "PKR 800-2000",
+      "experience_years": 10,
+      "verified": true,
+      "contact": {
+        "phone": "+92-302-3456789",
+        "whatsapp": "+92-302-3456789",
+        "email": "sarah.electric@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": [
+        "Wiring",
+        "Circuit Repair",
+        "Fan Installation",
+        "Light Fitting",
+        "Switchboard Repair"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 40
+    },
+    {
+      "provider_id": "PRV004",
+      "name": "Zainab Home Cleaning",
+      "owner_name": "Zainab Khan",
+      "service_type": "Home Cleaning",
+      "service_category": "Cleaning Services",
+      "location": {
+        "address": "House 78, Street 3, G-11/2, Islamabad, Pakistan",
+        "area": "G-11",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "friday": ["9AM", "10AM", "11AM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": ["10AM", "11AM"]
+      },
+      "rating": 4.7,
+      "reviews_count": 124,
+      "total_jobs": 289,
+      "price_range": "PKR 2000-4000",
+      "experience_years": 5,
+      "verified": true,
+      "contact": {
+        "phone": "+92-303-4567890",
+        "whatsapp": "+92-303-4567890",
+        "email": "zainab.cleaning@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": [
+        "Deep Cleaning",
+        "Regular Cleaning",
+        "Kitchen Cleaning",
+        "Bathroom Cleaning",
+        "Window Cleaning"
+      ],
+      "emergency_available": false,
+      "response_time_minutes": 120
+    },
+    {
+      "provider_id": "PRV005",
+      "name": "Ahmed Carpentry Works",
+      "owner_name": "Ahmed Ali",
+      "service_type": "Carpenter",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 5, Kohsar Market, F-7, Islamabad, Pakistan",
+        "area": "F-7",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": []
+      },
+      "rating": 4.5,
+      "reviews_count": 67,
+      "total_jobs": 178,
+      "price_range": "PKR 1500-5000",
+      "experience_years": 12,
+      "verified": true,
+      "contact": {
+        "phone": "+92-304-5678901",
+        "whatsapp": "+92-304-5678901",
+        "email": "ahmed.carpentry@servicelink.pk"
+      },
+      "languages": ["Urdu", "Punjabi"],
+      "services_offered": [
+        "Furniture Repair",
+        "Door Installation",
+        "Cabinet Making",
+        "Wood Polishing"
+      ],
+      "emergency_available": false,
+      "response_time_minutes": 60
+    },
+    {
+      "provider_id": "PRV006",
+      "name": "Bilal Painting Services",
+      "owner_name": "Bilal Shah",
+      "service_type": "Painter",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "House 92, Street 7, G-10/4, Islamabad, Pakistan",
+        "area": "G-10",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "friday": ["9AM", "10AM", "11AM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.4,
+      "reviews_count": 52,
+      "total_jobs": 145,
+      "price_range": "PKR 3000-8000",
+      "experience_years": 7,
+      "verified": true,
+      "contact": {
+        "phone": "+92-305-6789012",
+        "whatsapp": "+92-305-6789012",
+        "email": "bilal.painting@servicelink.pk"
+      },
+      "languages": ["Urdu"],
+      "services_offered": [
+        "Interior Painting",
+        "Exterior Painting",
+        "Wall Texture",
+        "Waterproofing"
+      ],
+      "emergency_available": false,
+      "response_time_minutes": 90
+    },
+    {
+      "provider_id": "PRV007",
+      "name": "Karachi Electric Solutions",
+      "owner_name": "Imran Siddiqui",
+      "service_type": "Electrician",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 23, Clifton Block 5, Karachi, Pakistan",
+        "area": "Clifton",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM", "5PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM", "5PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM", "5PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM", "5PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM", "4PM"],
+        "sunday": ["10AM", "11AM"]
+      },
+      "rating": 4.7,
+      "reviews_count": 178,
+      "total_jobs": 389,
+      "price_range": "PKR 1000-2500",
+      "experience_years": 9,
+      "verified": true,
+      "contact": {
+        "phone": "+92-321-1111111",
+        "whatsapp": "+92-321-1111111",
+        "email": "imran.electric@servicelink.pk"
+      },
+      "languages": ["Urdu", "English", "Sindhi"],
+      "services_offered": [
+        "Emergency Electrical Repairs",
+        "Wiring",
+        "Circuit Breaker Installation",
+        "Generator Installation",
+        "UPS Installation"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 25
+    },
+    {
+      "provider_id": "PRV008",
+      "name": "DHA Electricals Karachi",
+      "owner_name": "Fahad Khan",
+      "service_type": "Electrician",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "House 456, Street 12, DHA Phase 5, Karachi, Pakistan",
+        "area": "DHA",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": []
+      },
+      "rating": 4.8,
+      "reviews_count": 245,
+      "total_jobs": 512,
+      "price_range": "PKR 1200-3000",
+      "experience_years": 12,
+      "verified": true,
+      "contact": {
+        "phone": "+92-321-2222222",
+        "whatsapp": "+92-321-2222222",
+        "email": "fahad.electric@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": [
+        "Electrical Troubleshooting",
+        "Smart Home Installation",
+        "Solar Panel Installation",
+        "Wiring & Rewiring"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 30
+    },
+    {
+      "provider_id": "PRV009",
+      "name": "Gulshan Electricals",
+      "owner_name": "Rashid Ali",
+      "service_type": "Electrician",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 89, Block 13, Gulshan-e-Iqbal, Karachi, Pakistan",
+        "area": "Gulshan-e-Iqbal",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": []
+      },
+      "rating": 4.6,
+      "reviews_count": 134,
+      "total_jobs": 298,
+      "price_range": "PKR 800-2000",
+      "experience_years": 7,
+      "verified": true,
+      "contact": {
+        "phone": "+92-321-3333333",
+        "whatsapp": "+92-321-3333333",
+        "email": "rashid.electric@servicelink.pk"
+      },
+      "languages": ["Urdu", "Sindhi"],
+      "services_offered": [
+        "House Wiring",
+        "Fan & Light Installation",
+        "Switchboard Repair",
+        "Emergency Repairs"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 35
+    },
+    {
+      "provider_id": "PRV010",
+      "name": "Karachi AC Masters",
+      "owner_name": "Salman Ahmed",
+      "service_type": "AC Repair",
+      "service_category": "Home Appliances",
+      "location": {
+        "address": "Shop 45, Tariq Road, Karachi, Pakistan",
+        "area": "Tariq Road",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": ["10AM", "11AM"]
+      },
+      "rating": 4.9,
+      "reviews_count": 312,
+      "total_jobs": 678,
+      "price_range": "PKR 1500-4000",
+      "experience_years": 15,
+      "verified": true,
+      "contact": {
+        "phone": "+92-321-4444444",
+        "whatsapp": "+92-321-4444444",
+        "email": "salman.ac@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": [
+        "AC Installation",
+        "AC Repair",
+        "Gas Refilling",
+        "AC Maintenance",
+        "Split AC Installation"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 40
+    },
+    {
+      "provider_id": "PRV011",
+      "name": "Lahore Electricals Pro",
+      "owner_name": "Usman Tariq",
+      "service_type": "Electrician",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "House 234, Block C, Gulberg III, Lahore, Pakistan",
+        "area": "Gulberg",
+        "city": "Lahore"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": []
+      },
+      "rating": 4.8,
+      "reviews_count": 189,
+      "total_jobs": 423,
+      "price_range": "PKR 1000-2500",
+      "experience_years": 11,
+      "verified": true,
+      "contact": {
+        "phone": "+92-322-5555555",
+        "whatsapp": "+92-322-5555555",
+        "email": "usman.electric@servicelink.pk"
+      },
+      "languages": ["Urdu", "Punjabi", "English"],
+      "services_offered": [
+        "Electrical Wiring",
+        "Circuit Installation",
+        "Emergency Repairs",
+        "Generator Maintenance"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 30
+    },
+    {
+      "provider_id": "PRV012",
+      "name": "Model Town Plumbing",
+      "owner_name": "Asif Mahmood",
+      "service_type": "Plumbing",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "House 567, Block B, Model Town, Lahore, Pakistan",
+        "area": "Model Town",
+        "city": "Lahore"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.7,
+      "reviews_count": 156,
+      "total_jobs": 345,
+      "price_range": "PKR 1200-3000",
+      "experience_years": 9,
+      "verified": true,
+      "contact": {
+        "phone": "+92-322-6666666",
+        "whatsapp": "+92-322-6666666",
+        "email": "asif.plumbing@servicelink.pk"
+      },
+      "languages": ["Urdu", "Punjabi"],
+      "services_offered": [
+        "Pipe Repair",
+        "Drain Cleaning",
+        "Water Heater Installation",
+        "Bathroom Fitting"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 35
+    }
+  ],
+  "service_categories": [
+    "Home Appliances",
+    "Home Maintenance",
+    "Cleaning Services"
+  ],
+  "service_types": [
+    "AC Repair",
+    "Plumbing",
+    "Electrician",
+    "Home Cleaning",
+    "Carpenter",
+    "Painter"
+  ]
+}
+    {
+      "provider_id": "PRV013",
+      "name": "Faisal AC Services",
+      "owner_name": "Faisal Ahmed",
+      "service_type": "AC Repair",
+      "service_category": "Home Appliances",
+      "location": {
+        "address": "House 25, Street 5, G-13/1, Islamabad, Pakistan",
+        "area": "G-13",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": []
+      },
+      "rating": 4.8,
+      "reviews_count": 156,
+      "total_jobs": 342,
+      "price_range": "PKR 1500-3000",
+      "experience_years": 8,
+      "verified": true,
+      "contact": {
+        "phone": "+92-300-1234567",
+        "whatsapp": "+92-300-1234567",
+        "email": "ali.ac@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": [
+        "AC Installation",
+        "AC Repair",
+        "AC Maintenance",
+        "Gas Refilling"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 45
+    },
+    {
+      "provider_id": "PRV002",
+      "name": "Hassan Plumbing Services",
+      "owner_name": "Hassan Malik",
+      "service_type": "Plumbing",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 12, Main Market, F-10 Markaz, Islamabad, Pakistan",
+        "area": "F-10",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.6,
+      "reviews_count": 89,
+      "total_jobs": 234,
+      "price_range": "PKR 1000-2500",
+      "experience_years": 6,
+      "verified": true,
+      "contact": {
+        "phone": "+92-301-2345678",
+        "whatsapp": "+92-301-2345678",
+        "email": "hassan.plumbing@servicelink.pk"
+      },
+      "languages": ["Urdu", "Punjabi"],
+      "services_offered": [
+        "Pipe Repair",
+        "Drain Cleaning",
+        "Water Tank Installation",
+        "Bathroom Fitting"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 30
+    },
+    {
+      "provider_id": "PRV003",
+      "name": "Sarah Electricals",
+      "owner_name": "Sarah Ahmed",
+      "service_type": "Electrician",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "House 45, Street 8, I-8/3, Islamabad, Pakistan",
+        "area": "I-8",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "saturday": ["10AM", "11AM"],
+        "sunday": []
+      },
+      "rating": 4.9,
+      "reviews_count": 203,
+      "total_jobs": 456,
+      "price_range": "PKR 800-2000",
+      "experience_years": 10,
+      "verified": true,
+      "contact": {
+        "phone": "+92-302-3456789",
+        "whatsapp": "+92-302-3456789",
+        "email": "sarah.electric@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": [
+        "Wiring",
+        "Circuit Repair",
+        "Fan Installation",
+        "Light Fitting",
+        "Switchboard Repair"
+      ],
+      "emergency_available": true,
+      "response_time_minutes": 40
+    },
+    {
+      "provider_id": "PRV004",
+      "name": "Zainab Home Cleaning",
+      "owner_name": "Zainab Khan",
+      "service_type": "Home Cleaning",
+      "service_category": "Cleaning Services",
+      "location": {
+        "address": "House 78, Street 3, G-11/2, Islamabad, Pakistan",
+        "area": "G-11",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "friday": ["9AM", "10AM", "11AM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": ["10AM", "11AM"]
+      },
+      "rating": 4.7,
+      "reviews_count": 124,
+      "total_jobs": 289,
+      "price_range": "PKR 2000-4000",
+      "experience_years": 5,
+      "verified": true,
+      "contact": {
+        "phone": "+92-303-4567890",
+        "whatsapp": "+92-303-4567890",
+        "email": "zainab.cleaning@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": [
+        "Deep Cleaning",
+        "Regular Cleaning",
+        "Kitchen Cleaning",
+        "Bathroom Cleaning",
+        "Window Cleaning"
+      ],
+      "emergency_available": false,
+      "response_time_minutes": 120
+    },
+    {
+      "provider_id": "PRV005",
+      "name": "Ahmed Carpentry Works",
+      "owner_name": "Ahmed Ali",
+      "service_type": "Carpenter",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 5, Kohsar Market, F-7, Islamabad, Pakistan",
+        "area": "F-7",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": []
+      },
+      "rating": 4.5,
+      "reviews_count": 67,
+      "total_jobs": 178,
+      "price_range": "PKR 1500-5000",
+      "experience_years": 12,
+      "verified": true,
+      "contact": {
+        "phone": "+92-304-5678901",
+        "whatsapp": "+92-304-5678901",
+        "email": "ahmed.carpentry@servicelink.pk"
+      },
+      "languages": ["Urdu", "Punjabi"],
+      "services_offered": [
+        "Furniture Repair",
+        "Door Installation",
+        "Cabinet Making",
+        "Wood Polishing"
+      ],
+      "emergency_available": false,
+      "response_time_minutes": 60
+    },
+    {
+      "provider_id": "PRV006",
+      "name": "Bilal Painting Services",
+      "owner_name": "Bilal Shah",
+      "service_type": "Painter",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "House 92, Street 7, G-10/4, Islamabad, Pakistan",
+        "area": "G-10",
+        "city": "Islamabad"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "friday": ["9AM", "10AM", "11AM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.4,
+      "reviews_count": 52,
+      "total_jobs": 145,
+      "price_range": "PKR 3000-8000",
+      "experience_years": 7,
+      "verified": true,
+      "contact": {
+        "phone": "+92-305-6789012",
+        "whatsapp": "+92-305-6789012",
+        "email": "bilal.painting@servicelink.pk"
+      },
+      "languages": ["Urdu"],
+      "services_offered": [
+        "Interior Painting",
+        "Exterior Painting",
+        "Wall Texture",
+        "Waterproofing"
+      ],
+      "emergency_available": false,
+      "response_time_minutes": 90
+    }
+  ],
+  "service_categories": [
+    "Home Appliances",
+    "Home Maintenance",
+    "Cleaning Services"
+  ],
+  "service_types": [
+    "AC Repair",
+    "Plumbing",
+    "Electrician",
+    "Home Cleaning",
+    "Carpenter",
+    "Painter"
+  ]
+}
