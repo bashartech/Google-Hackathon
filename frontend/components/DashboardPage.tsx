@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { API_BASE_URL } from '@/lib/api';
 
 interface Stat {
   label: string;
@@ -41,13 +42,13 @@ export default function DashboardPage() {
     try {
       setLoading(true);
 
-      const statsRes = await fetch('http://localhost:8001/api/dashboard/stats');
+      const statsRes = await fetch(`${API_BASE_URL}/api/dashboard/stats`);
       if (!statsRes.ok) {
         throw new Error(`Stats API error: ${statsRes.status}`);
       }
       const statsData = await statsRes.json();
 
-      const bookingsRes = await fetch('http://localhost:8001/api/bookings?limit=10');
+      const bookingsRes = await fetch(`${API_BASE_URL}/api/bookings?limit=10`);
       if (!bookingsRes.ok) {
         throw new Error(`Bookings API error: ${bookingsRes.status}`);
       }
@@ -114,7 +115,7 @@ export default function DashboardPage() {
 
   const handleStatusUpdate = async (bookingId: string, newStatus: string) => {
     try {
-      const response = await fetch(`http://localhost:8001/api/bookings/${bookingId}/status`, {
+      const response = await fetch(`${API_BASE_URL}/api/bookings/${bookingId}/status`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })

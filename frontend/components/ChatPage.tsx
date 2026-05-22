@@ -7,6 +7,8 @@ import AgentReasoning from '@/components/AgentReasoning';
 import { Users } from 'lucide-react';
 import Sidebar from '@/components/Sidebar';
 
+import { API_BASE_URL } from '@/lib/api';
+
 interface WorkflowStep {
   agent: string;
   stage: string;
@@ -32,7 +34,7 @@ export default function ChatPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8001/api/service-request', {
+      const response = await fetch(`${API_BASE_URL}/api/service-request`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message, session_id: sessionId }),
