@@ -4,8 +4,8 @@
  */
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Sparkles, ArrowRight, Activity, Network, ShieldCheck, Cpu} from 'lucide-react';
+import { motion, Variants } from 'framer-motion';
+import { Sparkles, ArrowRight} from 'lucide-react';
 import Link from 'next/link';
 interface HeroProps {
   onAccessSandbox: () => void;
@@ -13,7 +13,7 @@ interface HeroProps {
 }
 
 export default function Hero({ onAccessSandbox, onAccessDashboard }: HeroProps) {
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 25 },
     visible: {
       opacity: 1,

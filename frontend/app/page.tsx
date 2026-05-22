@@ -14,9 +14,9 @@ import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
 import React, { useState } from 'react';
 
-import HomePage from '@/app/Home/page';
-import ChatPage from '@/app/chat/page';
-import DashboardPage from '@/app/dashboard/page';
+import HomePage from '@/components/HomePage';
+import ChatPage from '@/components/ChatPage';
+import DashboardPage from '@/components/DashboardPage';
 
 const pageVariants: Variants = {
   initial: {
@@ -54,11 +54,11 @@ export default function App() {
   const renderPage = () => {
     switch (pathname) {
       case '/chat':
-        return <ChatPage sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />;
+        return <ChatPage />;
       case '/dashboard':
         return <DashboardPage />;
       default:
-        return <HomePage sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />;
+        return <HomePage />;
     }
   };
 
