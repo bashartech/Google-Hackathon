@@ -28,15 +28,7 @@ export default function Hero({ onAccessSandbox, onAccessDashboard }: HeroProps) 
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-brand-secondary/5 rounded-full blur-[100px] pointer-events-none -z-10" />
 
-      {/* Protocol Accent Badge */}
-      <motion.div 
-        variants={itemVariants}
-        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 border border-brand-primary/15 text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-8"
-        id="hero-badge"
-      >
-        <Sparkles className="w-3.5 h-3.5 text-brand-primary animate-pulse" />
-        Multi-Agent Orchestrator • Challenge 2 Submission
-      </motion.div>
+   
 
       {/* Re-designed Core Hero Text */}
       <motion.h1 
