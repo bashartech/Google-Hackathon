@@ -1,12 +1,12 @@
 {
     "experimentalServices": {
         "frontend": {
-            "root": "/",
+            "root": ".",
             "routePrefix": "/",
             "framework": "nextjs"
         },
         "backend": {
-            "root": "backend",
+            "root": "../backend",
             "routePrefix": "/_/backend",
             "framework": "fastapi"
         }
