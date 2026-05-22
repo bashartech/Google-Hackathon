@@ -1,9 +1,6 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+"use client";
 
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import Header from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ArchitectureGraph from '@/components/ArchitectureGraph';
