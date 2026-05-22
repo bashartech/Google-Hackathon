@@ -11,7 +11,8 @@ python-multipart
 openai
 openai-agents
 googlemaps
-deep-translator 
+deep-translator
 langdetect
 beautifulsoup4
 requests
+psycopg2-binary

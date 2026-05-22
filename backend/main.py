@@ -22,7 +22,7 @@ from scheduling_agents.service_orchestrator import (
     get_booking_status,
     cancel_booking
 )
-from database.db_manager import DatabaseManager
+from database.db_manager_postgres import DatabaseManager
 from config.settings import settings
 from tools.email_tools import get_email_config_status
 from utils.session_manager import session_manager
@@ -276,69 +276,6 @@ async def get_employee(employee_id: int):
         raise HTTPException(
             status_code=500,
             detail=f"Failed to fetch employee: {str(e)}"
-        )
-
-
-@app.get("/api/dashboard/stats")
-async def get_dashboard_stats():
-    """
-    Get dashboard statistics
-
-    Returns:
-        Dashboard statistics including counts and summaries
-    """
-    try:
-        stats = db.get_statistics()
-        managers = db.load_managers()
-        meetings = db.load_meetings()
-        employees = db.load_employees()
-
-        # Calculate additional stats
-        departments = set()
-        for manager in managers:
-            departments.add(manager.get('department', 'Unknown'))
-        for employee in employees:
-            departments.add(employee.get('department', 'Unknown'))
-
-        # Recent meetings (last 5)
-        recent_meetings = sorted(
-            meetings,
-            key=lambda x: x.get('created_at', ''),
-            reverse=True
-        )[:5]
-
-        # Meetings by status
-        meetings_by_status = {
-            "confirmed": len([m for m in meetings if m.get('status') == 'confirmed']),
-            "pending": len([m for m in meetings if m.get('status') == 'pending']),
-            "cancelled": len([m for m in meetings if m.get('status') == 'cancelled'])
-        }
-
-        # Employees by department
-        employees_by_dept = {}
-        for employee in employees:
-            dept = employee.get('department', 'Unknown')
-            employees_by_dept[dept] = employees_by_dept.get(dept, 0) + 1
-
-        return {
-            "overview": {
-                "total_managers": stats.get('total_managers', 0),
-                "total_employees": stats.get('total_employees', 0),
-                "total_meetings": stats.get('total_meetings', 0),
-                "total_departments": len(departments),
-                "active_employees": stats.get('active_employees', 0),
-                "confirmed_meetings": stats.get('confirmed_meetings', 0)
-            },
-            "meetings_by_status": meetings_by_status,
-            "employees_by_department": employees_by_dept,
-            "recent_meetings": recent_meetings,
-            "departments": sorted(list(departments))
-        }
-    except Exception as e:
-        logger.error(f"Error fetching dashboard stats: {str(e)}")
-        raise HTTPException(
-            status_code=500,
-            detail=f"Failed to fetch dashboard stats: {str(e)}"
         )
 
 
@@ -647,6 +584,261 @@ async def delete_booking(booking_id: str, reason: Optional[str] = None):
 
 
 @app.patch("/api/bookings/{booking_id}/status")
+async def update_booking_status(booking_id: str, status_data: dict):
+    """Update booking status and sync with Google Calendar"""
+    try:
+        new_status = status_data.get("status")
+        if not new_status:
+            raise HTTPException(status_code=400, detail="Status is required")
+
+        # Get old booking for comparison
+        old_booking = db.get_booking_by_id(booking_id)
+        if not old_booking:
+            raise HTTPException(status_code=404, detail="Booking not found")
+
+        # Update booking status
+        updated_booking = db.update_booking(booking_id, {"status": new_status})
+
+        # Sync with Google Calendar if event ID exists
+        try:
+            from utils.google_calendar_service import GoogleCalendarService
+            google_calendar = GoogleCalendarService()
+
+            if updated_booking.get('google_calendar_event_id') and google_calendar.check_availability():
+                google_calendar.update_booking_event(
+                    event_id=updated_booking['google_calendar_event_id'],
+                    new_status=new_status,
+                    additional_notes=f"Status updated from {old_booking['status']} to {new_status}"
+                )
+                logger.info(f"Synced status update to Google Calendar for booking {booking_id}")
+        except Exception as e:
+            logger.warning(f"Failed to sync status update to Google Calendar: {e}")
+
+        # Send status update email
+        try:
+            from utils.reminder_service import ReminderService
+            reminder_service = ReminderService()
+
+            if updated_booking.get('customer_email'):
+                reminder_service.send_status_update(
+                    to_email=updated_booking['customer_email'],
+                    booking_id=booking_id,
+                    old_status=old_booking['status'],
+                    new_status=new_status,
+                    service_type=updated_booking['service_type'],
+                    customer_name=updated_booking.get('customer_name')
+                )
+        except Exception as e:
+            logger.warning(f"Failed to send status update email: {e}")
+
+        return {"status": "success", "booking": updated_booking}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error updating booking status: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/providers")
+async def get_providers(service_type: Optional[str] = None, city: Optional[str] = None):
+    """
+    Get all providers or filter by service type and city
+    """
+    try:
+        providers = db.get_all_providers()
+
+        # Filter by service type if provided
+        if service_type:
+            providers = [p for p in providers if p.get('service_type') == service_type]
+
+        # Filter by city if provided
+        if city:
+            providers = [p for p in providers if p.get('location', {}).get('city') == city]
+
+        return {
+            "status": "success",
+            "count": len(providers),
+            "providers": providers
+        }
+    except Exception as e:
+        logger.error(f"Error fetching providers: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/providers/{provider_id}/availability")
+async def get_provider_availability(provider_id: str, date: str):
+    """
+    Get available time slots for a provider on a specific date
+
+    Args:
+        provider_id: Provider ID (e.g., PRV001)
+        date: Date in YYYY-MM-DD format
+
+    Returns:
+        List of available time slots
+    """
+    try:
+        from utils.calendar_service import CalendarService
+        calendar_service = CalendarService(db)
+
+        slots = calendar_service.get_available_slots(provider_id, date)
+
+        return {
+            "status": "success",
+            "provider_id": provider_id,
+            "date": date,
+            "available_slots": slots,
+            "count": len(slots)
+        }
+    except Exception as e:
+        logger.error(f"Error fetching availability: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/providers/{provider_id}/next-available")
+async def get_next_available_date(provider_id: str, days_to_check: int = 7):
+    """
+    Find the next available date with open slots for a provider
+
+    Args:
+        provider_id: Provider ID
+        days_to_check: Number of days to check ahead (default 7)
+
+    Returns:
+        Next available date with slots
+    """
+    try:
+        from utils.calendar_service import CalendarService
+        calendar_service = CalendarService(db)
+
+        next_available = calendar_service.get_next_available_date(provider_id, days_to_check)
+
+        if next_available:
+            return {
+                "status": "success",
+                "provider_id": provider_id,
+                "next_available": next_available
+            }
+        else:
+            return {
+                "status": "no_availability",
+                "provider_id": provider_id,
+                "message": f"No availability in next {days_to_check} days"
+            }
+    except Exception as e:
+        logger.error(f"Error finding next available date: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/providers/{provider_id}/schedule")
+async def get_provider_schedule(provider_id: str, start_date: str, end_date: str):
+    """
+    Get provider's schedule for a date range
+
+    Args:
+        provider_id: Provider ID
+        start_date: Start date (YYYY-MM-DD)
+        end_date: End date (YYYY-MM-DD)
+
+    Returns:
+        Provider's schedule with booked and available slots
+    """
+    try:
+        from utils.calendar_service import CalendarService
+        calendar_service = CalendarService(db)
+
+        schedule = calendar_service.get_provider_schedule(provider_id, start_date, end_date)
+
+        return {
+            "status": "success",
+            "provider_id": provider_id,
+            "start_date": start_date,
+            "end_date": end_date,
+            "schedule": schedule
+        }
+    except Exception as e:
+        logger.error(f"Error fetching schedule: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/bookings")
+async def get_all_bookings(status: Optional[str] = None, limit: Optional[int] = 50):
+    """
+    Get all bookings or filter by status
+    """
+    try:
+        bookings = db.get_all_bookings()
+
+        # Filter by status if provided
+        if status:
+            bookings = [b for b in bookings if b.get('status') == status]
+
+        # Limit results
+        bookings = bookings[:limit]
+
+        return {
+            "status": "success",
+            "count": len(bookings),
+            "bookings": bookings
+        }
+    except Exception as e:
+        logger.error(f"Error fetching bookings: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/dashboard/stats")
+async def get_dashboard_stats():
+    """
+    Get dashboard statistics
+    """
+    try:
+        bookings = db.get_all_bookings()
+        providers = db.get_all_providers()
+
+        # Calculate stats
+        total_bookings = len(bookings)
+        active_bookings = len([b for b in bookings if b.get('status') in ['pending', 'confirmed', 'in_progress']])
+        completed_bookings = len([b for b in bookings if b.get('status') == 'completed'])
+        total_providers = len(providers)
+
+        # Service type breakdown
+        service_breakdown = {}
+        for booking in bookings:
+            service = booking.get('service_type', 'Unknown')
+            service_breakdown[service] = service_breakdown.get(service, 0) + 1
+
+        # City breakdown
+        city_breakdown = {}
+        for booking in bookings:
+            location = booking.get('customer_location', '')
+            # Extract city from location string
+            if 'Karachi' in location:
+                city = 'Karachi'
+            elif 'Islamabad' in location:
+                city = 'Islamabad'
+            elif 'Lahore' in location:
+                city = 'Lahore'
+            else:
+                city = 'Other'
+            city_breakdown[city] = city_breakdown.get(city, 0) + 1
+
+        return {
+            "status": "success",
+            "stats": {
+                "total_bookings": total_bookings,
+                "active_bookings": active_bookings,
+                "completed_bookings": completed_bookings,
+                "total_providers": total_providers,
+                "service_breakdown": service_breakdown,
+                "city_breakdown": city_breakdown
+            }
+        }
+    except Exception as e:
+        logger.error(f"Error fetching dashboard stats: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.patch("/api/bookings/{booking_id}/status")
 async def update_booking_status(
     booking_id: str,
     status: str,
@@ -838,6 +1030,189 @@ async def get_all_bookings(
             status_code=500,
             detail=f"Failed to fetch bookings: {str(e)}"
         )
+
+
+# ============================================================
+# Smart Scheduling Endpoints
+# ============================================================
+
+@app.get("/api/scheduling/best-times")
+async def get_best_booking_times(service_type: str, area: str):
+    """
+    Get optimal booking times based on demand patterns
+
+    Args:
+        service_type: Type of service
+        area: Area/location
+
+    Returns:
+        List of recommended booking times with discounts
+    """
+    try:
+        from utils.smart_scheduler import SmartScheduler
+        scheduler = SmartScheduler(db)
+
+        best_times = scheduler.suggest_best_time(service_type, area)
+
+        return {
+            "status": "success",
+            "service_type": service_type,
+            "area": area,
+            "recommendations": best_times
+        }
+
+    except Exception as e:
+        logger.error(f"Error getting best times: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/scheduling/insights")
+async def get_scheduling_insights(service_type: str, area: str):
+    """
+    Get comprehensive scheduling insights
+
+    Args:
+        service_type: Type of service
+        area: Area/location
+
+    Returns:
+        Detailed scheduling insights and recommendations
+    """
+    try:
+        from utils.smart_scheduler import SmartScheduler
+        scheduler = SmartScheduler(db)
+
+        insights = scheduler.get_scheduling_insights(service_type, area)
+
+        return {
+            "status": "success",
+            "service_type": service_type,
+            "area": area,
+            "insights": insights
+        }
+
+    except Exception as e:
+        logger.error(f"Error getting scheduling insights: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/scheduling/peak-hours")
+async def get_peak_hours_info():
+    """
+    Get current peak hours information and surge pricing
+
+    Returns:
+        Peak hours status and pricing info
+    """
+    try:
+        from utils.smart_scheduler import SmartScheduler
+        scheduler = SmartScheduler(db)
+
+        peak_info = scheduler.get_peak_hours_info()
+
+        return {
+            "status": "success",
+            "peak_info": peak_info
+        }
+
+    except Exception as e:
+        logger.error(f"Error getting peak hours info: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ============================================================
+# Provider Acceptance Workflow Endpoints
+# ============================================================
+
+@app.post("/api/provider/respond/{booking_id}")
+async def provider_respond_to_booking(booking_id: str, response_data: dict):
+    """
+    Provider accepts or rejects a booking request
+
+    Args:
+        booking_id: Booking ID
+        response_data: {"response": "accepted" or "rejected", "provider_id": "...", "reason": "..." (optional)}
+
+    Returns:
+        Response status and next steps
+    """
+    try:
+        from utils.provider_acceptance_service import ProviderAcceptanceService
+        acceptance_service = ProviderAcceptanceService(db)
+
+        response = response_data.get("response")
+        provider_id = response_data.get("provider_id")
+        reason = response_data.get("reason")
+
+        if not response or not provider_id:
+            raise HTTPException(status_code=400, detail="Response and provider_id are required")
+
+        if response == "accepted":
+            result = acceptance_service.provider_accept_booking(booking_id, provider_id)
+        elif response == "rejected":
+            result = acceptance_service.provider_reject_booking(booking_id, provider_id, reason)
+        else:
+            raise HTTPException(status_code=400, detail="Response must be 'accepted' or 'rejected'")
+
+        return result
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error processing provider response: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/provider/{provider_id}/stats")
+async def get_provider_stats(provider_id: str):
+    """
+    Get provider's acceptance/rejection statistics
+
+    Args:
+        provider_id: Provider ID
+
+    Returns:
+        Provider statistics including acceptance rate and response time
+    """
+    try:
+        from utils.provider_acceptance_service import ProviderAcceptanceService
+        acceptance_service = ProviderAcceptanceService(db)
+
+        stats = acceptance_service.get_provider_response_stats(provider_id)
+
+        return {
+            "status": "success",
+            "provider_id": provider_id,
+            "stats": stats
+        }
+
+    except Exception as e:
+        logger.error(f"Error fetching provider stats: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/api/provider/initialize-acceptance-system")
+async def initialize_provider_acceptance_system():
+    """
+    Initialize provider acceptance system (create tables)
+    """
+    try:
+        from utils.provider_acceptance_service import ProviderAcceptanceService
+        acceptance_service = ProviderAcceptanceService(db)
+
+        success = acceptance_service.create_provider_response_table()
+
+        if success:
+            return {
+                "status": "success",
+                "message": "Provider acceptance system initialized successfully"
+            }
+        else:
+            raise HTTPException(status_code=500, detail="Failed to initialize system")
+
+    except Exception as e:
+        logger.error(f"Error initializing provider acceptance system: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # ============================================================

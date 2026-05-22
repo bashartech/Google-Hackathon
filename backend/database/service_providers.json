@@ -431,6 +431,510 @@
       "services_offered": ["Pipe Repair", "Drain Cleaning", "Water Heater Installation", "Bathroom Fitting"],
       "emergency_available": true,
       "response_time_minutes": 35
+    },
+    {
+      "provider_id": "PRV013",
+      "name": "Gulshan Plumbing Services",
+      "owner_name": "Hamza Ali",
+      "service_type": "Plumbing",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 15, Block 13-D, Gulshan-e-Iqbal, Karachi, Pakistan",
+        "area": "Gulshan-e-Iqbal",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": ["10AM", "11AM"]
+      },
+      "rating": 4.8,
+      "reviews_count": 198,
+      "total_jobs": 412,
+      "price_range": "PKR 1000-2800",
+      "experience_years": 11,
+      "verified": true,
+      "contact": {
+        "phone": "+92-321-7777777",
+        "whatsapp": "+92-321-7777777",
+        "email": "hamza.plumbing@servicelink.pk"
+      },
+      "languages": ["Urdu", "Sindhi", "English"],
+      "services_offered": ["Pipe Repair", "Drain Cleaning", "Water Tank Installation", "Leak Fixing", "Bathroom Fitting"],
+      "emergency_available": true,
+      "response_time_minutes": 30
+    },
+    {
+      "provider_id": "PRV014",
+      "name": "Defence Plumbing Pro",
+      "owner_name": "Zain Malik",
+      "service_type": "Plumbing",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "House 234, Street 8, DHA Phase 6, Karachi, Pakistan",
+        "area": "DHA",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.9,
+      "reviews_count": 267,
+      "total_jobs": 589,
+      "price_range": "PKR 1200-3200",
+      "experience_years": 14,
+      "verified": true,
+      "contact": {
+        "phone": "+92-321-8888888",
+        "whatsapp": "+92-321-8888888",
+        "email": "zain.plumbing@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": ["Pipe Repair", "Drain Cleaning", "Water Heater Installation", "Bathroom Fitting", "Kitchen Plumbing"],
+      "emergency_available": true,
+      "response_time_minutes": 25
+    },
+    {
+      "provider_id": "PRV015",
+      "name": "Nazimabad Plumbing Works",
+      "owner_name": "Kamran Shah",
+      "service_type": "Plumbing",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 45, Block B, Nazimabad No. 2, Karachi, Pakistan",
+        "area": "Nazimabad",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": []
+      },
+      "rating": 4.6,
+      "reviews_count": 143,
+      "total_jobs": 321,
+      "price_range": "PKR 900-2500",
+      "experience_years": 8,
+      "verified": true,
+      "contact": {
+        "phone": "+92-321-9999999",
+        "whatsapp": "+92-321-9999999",
+        "email": "kamran.plumbing@servicelink.pk"
+      },
+      "languages": ["Urdu", "Sindhi"],
+      "services_offered": ["Pipe Repair", "Drain Cleaning", "Water Tank Installation", "Leak Fixing"],
+      "emergency_available": true,
+      "response_time_minutes": 35
+    },
+    {
+      "provider_id": "PRV016",
+      "name": "Saddar Plumbing Solutions",
+      "owner_name": "Tariq Hussain",
+      "service_type": "Plumbing",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 78, Empress Market, Saddar, Karachi, Pakistan",
+        "area": "Saddar",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.5,
+      "reviews_count": 112,
+      "total_jobs": 278,
+      "price_range": "PKR 800-2200",
+      "experience_years": 10,
+      "verified": true,
+      "contact": {
+        "phone": "+92-322-1111111",
+        "whatsapp": "+92-322-1111111",
+        "email": "tariq.plumbing@servicelink.pk"
+      },
+      "languages": ["Urdu", "Sindhi", "English"],
+      "services_offered": ["Pipe Repair", "Drain Cleaning", "Leak Fixing", "Bathroom Fitting"],
+      "emergency_available": true,
+      "response_time_minutes": 40
+    },
+    {
+      "provider_id": "PRV017",
+      "name": "Gulshan AC Masters",
+      "owner_name": "Adnan Raza",
+      "service_type": "AC Repair",
+      "service_category": "Home Appliances",
+      "location": {
+        "address": "Shop 34, Block 13, Gulshan-e-Iqbal, Karachi, Pakistan",
+        "area": "Gulshan-e-Iqbal",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": ["10AM", "11AM"]
+      },
+      "rating": 4.7,
+      "reviews_count": 234,
+      "total_jobs": 567,
+      "price_range": "PKR 1500-3500",
+      "experience_years": 12,
+      "verified": true,
+      "contact": {
+        "phone": "+92-322-2222222",
+        "whatsapp": "+92-322-2222222",
+        "email": "adnan.ac@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": ["AC Installation", "AC Repair", "Gas Refilling", "AC Maintenance", "Split AC Installation"],
+      "emergency_available": true,
+      "response_time_minutes": 35
+    },
+    {
+      "provider_id": "PRV018",
+      "name": "DHA AC Solutions",
+      "owner_name": "Rizwan Ahmed",
+      "service_type": "AC Repair",
+      "service_category": "Home Appliances",
+      "location": {
+        "address": "House 789, Street 15, DHA Phase 7, Karachi, Pakistan",
+        "area": "DHA",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.9,
+      "reviews_count": 345,
+      "total_jobs": 789,
+      "price_range": "PKR 1800-4000",
+      "experience_years": 15,
+      "verified": true,
+      "contact": {
+        "phone": "+92-322-3333333",
+        "whatsapp": "+92-322-3333333",
+        "email": "rizwan.ac@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": ["AC Installation", "AC Repair", "Gas Refilling", "AC Maintenance", "Window AC Service"],
+      "emergency_available": true,
+      "response_time_minutes": 25
+    },
+    {
+      "provider_id": "PRV019",
+      "name": "Nazimabad AC Services",
+      "owner_name": "Shahid Iqbal",
+      "service_type": "AC Repair",
+      "service_category": "Home Appliances",
+      "location": {
+        "address": "Shop 56, Block C, Nazimabad No. 3, Karachi, Pakistan",
+        "area": "Nazimabad",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": []
+      },
+      "rating": 4.6,
+      "reviews_count": 187,
+      "total_jobs": 423,
+      "price_range": "PKR 1400-3200",
+      "experience_years": 9,
+      "verified": true,
+      "contact": {
+        "phone": "+92-322-4444444",
+        "whatsapp": "+92-322-4444444",
+        "email": "shahid.ac@servicelink.pk"
+      },
+      "languages": ["Urdu", "Sindhi"],
+      "services_offered": ["AC Installation", "AC Repair", "Gas Refilling", "AC Maintenance"],
+      "emergency_available": true,
+      "response_time_minutes": 40
+    },
+    {
+      "provider_id": "PRV020",
+      "name": "Clifton AC Experts",
+      "owner_name": "Nadeem Khan",
+      "service_type": "AC Repair",
+      "service_category": "Home Appliances",
+      "location": {
+        "address": "Shop 12, Block 8, Clifton, Karachi, Pakistan",
+        "area": "Clifton",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.8,
+      "reviews_count": 298,
+      "total_jobs": 645,
+      "price_range": "PKR 1600-3800",
+      "experience_years": 13,
+      "verified": true,
+      "contact": {
+        "phone": "+92-322-5555555",
+        "whatsapp": "+92-322-5555555",
+        "email": "nadeem.ac@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": ["AC Installation", "AC Repair", "Gas Refilling", "AC Maintenance", "Split AC Installation"],
+      "emergency_available": true,
+      "response_time_minutes": 30
+    },
+    {
+      "provider_id": "PRV021",
+      "name": "Gulshan Home Cleaning",
+      "owner_name": "Amna Malik",
+      "service_type": "Home Cleaning",
+      "service_category": "Cleaning Services",
+      "location": {
+        "address": "House 123, Block 15, Gulshan-e-Iqbal, Karachi, Pakistan",
+        "area": "Gulshan-e-Iqbal",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "friday": ["9AM", "10AM", "11AM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": ["10AM", "11AM"]
+      },
+      "rating": 4.7,
+      "reviews_count": 156,
+      "total_jobs": 342,
+      "price_range": "PKR 2000-4500",
+      "experience_years": 6,
+      "verified": true,
+      "contact": {
+        "phone": "+92-323-1111111",
+        "whatsapp": "+92-323-1111111",
+        "email": "amna.cleaning@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": ["Deep Cleaning", "Regular Cleaning", "Kitchen Cleaning", "Bathroom Cleaning", "Window Cleaning"],
+      "emergency_available": false,
+      "response_time_minutes": 120
+    },
+    {
+      "provider_id": "PRV022",
+      "name": "DHA Cleaning Services",
+      "owner_name": "Hira Ahmed",
+      "service_type": "Home Cleaning",
+      "service_category": "Cleaning Services",
+      "location": {
+        "address": "House 456, Street 9, DHA Phase 5, Karachi, Pakistan",
+        "area": "DHA",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "friday": ["9AM", "10AM", "11AM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.8,
+      "reviews_count": 223,
+      "total_jobs": 489,
+      "price_range": "PKR 2500-5000",
+      "experience_years": 8,
+      "verified": true,
+      "contact": {
+        "phone": "+92-323-2222222",
+        "whatsapp": "+92-323-2222222",
+        "email": "hira.cleaning@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": ["Deep Cleaning", "Regular Cleaning", "Kitchen Cleaning", "Bathroom Cleaning", "Carpet Cleaning"],
+      "emergency_available": false,
+      "response_time_minutes": 90
+    },
+    {
+      "provider_id": "PRV023",
+      "name": "Clifton Carpentry Works",
+      "owner_name": "Wasim Akbar",
+      "service_type": "Carpenter",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 67, Block 4, Clifton, Karachi, Pakistan",
+        "area": "Clifton",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.6,
+      "reviews_count": 134,
+      "total_jobs": 298,
+      "price_range": "PKR 1500-5500",
+      "experience_years": 14,
+      "verified": true,
+      "contact": {
+        "phone": "+92-323-3333333",
+        "whatsapp": "+92-323-3333333",
+        "email": "wasim.carpentry@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": ["Furniture Repair", "Door Installation", "Cabinet Making", "Wood Polishing", "Custom Furniture"],
+      "emergency_available": false,
+      "response_time_minutes": 60
+    },
+    {
+      "provider_id": "PRV024",
+      "name": "Gulshan Carpentry Pro",
+      "owner_name": "Faisal Javed",
+      "service_type": "Carpenter",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 89, Block 11, Gulshan-e-Iqbal, Karachi, Pakistan",
+        "area": "Gulshan-e-Iqbal",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM", "4PM"],
+        "friday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "saturday": ["10AM", "11AM", "2PM", "3PM"],
+        "sunday": []
+      },
+      "rating": 4.5,
+      "reviews_count": 98,
+      "total_jobs": 234,
+      "price_range": "PKR 1400-5000",
+      "experience_years": 10,
+      "verified": true,
+      "contact": {
+        "phone": "+92-323-4444444",
+        "whatsapp": "+92-323-4444444",
+        "email": "faisal.carpentry@servicelink.pk"
+      },
+      "languages": ["Urdu", "Sindhi"],
+      "services_offered": ["Furniture Repair", "Door Installation", "Cabinet Making", "Wood Polishing"],
+      "emergency_available": false,
+      "response_time_minutes": 75
+    },
+    {
+      "provider_id": "PRV025",
+      "name": "DHA Painting Services",
+      "owner_name": "Adil Nawaz",
+      "service_type": "Painter",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "House 321, Street 11, DHA Phase 6, Karachi, Pakistan",
+        "area": "DHA",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "friday": ["9AM", "10AM", "11AM"],
+        "saturday": ["10AM", "11AM", "2PM"],
+        "sunday": []
+      },
+      "rating": 4.7,
+      "reviews_count": 167,
+      "total_jobs": 378,
+      "price_range": "PKR 3500-9000",
+      "experience_years": 11,
+      "verified": true,
+      "contact": {
+        "phone": "+92-323-5555555",
+        "whatsapp": "+92-323-5555555",
+        "email": "adil.painting@servicelink.pk"
+      },
+      "languages": ["Urdu", "English"],
+      "services_offered": ["Interior Painting", "Exterior Painting", "Wall Texture", "Waterproofing", "Wood Painting"],
+      "emergency_available": false,
+      "response_time_minutes": 90
+    },
+    {
+      "provider_id": "PRV026",
+      "name": "Gulshan Painting Masters",
+      "owner_name": "Bilal Butt",
+      "service_type": "Painter",
+      "service_category": "Home Maintenance",
+      "location": {
+        "address": "Shop 45, Block 14, Gulshan-e-Iqbal, Karachi, Pakistan",
+        "area": "Gulshan-e-Iqbal",
+        "city": "Karachi"
+      },
+      "availability": {
+        "monday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "tuesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "wednesday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "thursday": ["9AM", "10AM", "11AM", "2PM", "3PM"],
+        "friday": ["9AM", "10AM", "11AM"],
+        "saturday": ["10AM", "11AM"],
+        "sunday": []
+      },
+      "rating": 4.5,
+      "reviews_count": 123,
+      "total_jobs": 289,
+      "price_range": "PKR 3000-8000",
+      "experience_years": 9,
+      "verified": true,
+      "contact": {
+        "phone": "+92-323-6666666",
+        "whatsapp": "+92-323-6666666",
+        "email": "bilal.painting@servicelink.pk"
+      },
+      "languages": ["Urdu", "Sindhi"],
+      "services_offered": ["Interior Painting", "Exterior Painting", "Wall Texture", "Waterproofing"],
+      "emergency_available": false,
+      "response_time_minutes": 100
     }
   ],
   "service_categories": [

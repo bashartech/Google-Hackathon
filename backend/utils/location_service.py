@@ -407,19 +407,19 @@ class LocationService:
         # Calculate ranking scores
         for provider in providers_with_distance:
             # Distance score (inverse - closer is better)
-            max_distance = max(p['distance_km'] for p in providers_with_distance)
-            distance_score = (1 - (provider['distance_km'] / max_distance)) * 100 if max_distance > 0 else 100
+            max_distance = max(float(p['distance_km']) for p in providers_with_distance)
+            distance_score = (1 - (float(provider['distance_km']) / max_distance)) * 100 if max_distance > 0 else 100
 
             # Rating score (out of 5, convert to 100)
-            rating_score = (provider.get('rating', 0) / 5.0) * 100
+            rating_score = (float(provider.get('rating', 0)) / 5.0) * 100
 
             # Response time score (inverse - faster is better)
-            max_response_time = max(p.get('response_time_minutes', 60) for p in providers_with_distance)
-            response_time_score = (1 - (provider.get('response_time_minutes', 60) / max_response_time)) * 100 if max_response_time > 0 else 100
+            max_response_time = max(float(p.get('response_time_minutes', 60)) for p in providers_with_distance)
+            response_time_score = (1 - (float(provider.get('response_time_minutes', 60)) / max_response_time)) * 100 if max_response_time > 0 else 100
 
             # Experience score (years)
-            max_experience = max(p.get('experience_years', 1) for p in providers_with_distance)
-            experience_score = (provider.get('experience_years', 0) / max_experience) * 100 if max_experience > 0 else 0
+            max_experience = max(float(p.get('experience_years', 1)) for p in providers_with_distance)
+            experience_score = (float(provider.get('experience_years', 0)) / max_experience) * 100 if max_experience > 0 else 0
 
             # Calculate weighted total score
             total_score = (

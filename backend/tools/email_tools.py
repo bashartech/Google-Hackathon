@@ -74,9 +74,9 @@ async def send_booking_confirmation_email(
     Tries Gmail API first, falls back to SMTP
     """
     urgency_text = "🚨 EMERGENCY" if urgency == "emergency" else "⚡ HIGH PRIORITY" if urgency == "high" else "NORMAL"
-    
+
     subject = f"New Service Booking - {booking_id}"
-    
+
     text = f"""
 New Service Booking - ServiceLink AI
 

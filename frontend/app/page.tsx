@@ -12,6 +12,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
+import React, { useState } from 'react';
 
 import HomePage from '@/app/Home/page';
 import ChatPage from '@/app/chat/page';
@@ -48,17 +49,16 @@ const pageVariants: Variants = {
 
 export default function App() {
   const pathname = usePathname();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const renderPage = () => {
     switch (pathname) {
       case '/chat':
-        return <ChatPage />;
-
+        return <ChatPage sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />;
       case '/dashboard':
         return <DashboardPage />;
-
       default:
-        return <HomePage />;
+        return <HomePage sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />;
     }
   };
 
@@ -86,16 +86,18 @@ export default function App() {
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03]" />
       </div>
 
-      {/* Sidebar */}
-      <aside className="relative z-20 hidden border-r border-white/10 bg-white/[0.03] backdrop-blur-2xl lg:flex">
+      {/* Sidebar for desktop */}
+      {/* <aside className="relative z-20 hidden lg:flex border-r border-white/10 bg-white/[0.03] backdrop-blur-2xl">
         <Sidebar />
-      </aside>
+      </aside> */}
+      {/* Sidebar for mobile */}
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       {/* Main Layout */}
       <div className="relative flex min-w-0 flex-1 flex-col">
         {/* Top Navbar */}
         <header className="sticky top-0 z-30 border-b border-white/10 bg-[#0B1120]/70 backdrop-blur-2xl">
-          <Navbar />
+          <Navbar onMenuClick={() => setSidebarOpen(true)} />
         </header>
 
         {/* Main Content */}
